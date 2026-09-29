@@ -49,6 +49,24 @@ A high-frequency electromagnetic antenna design and simulation suite developed i
 
 ---
 
+## Electromagnetic 3D Models & Array Geometries
+
+Below are the 3D full-wave electromagnetic simulation models synthesized in CST Studio Suite:
+
+### Single Inset-Fed Microstrip Patch & $1 \times 4$ Linear Beamforming Array
+
+| Single-Element 868 MHz Inset-Fed Patch | $1 \times 4$ Linear Array with Wilkinson Corporate Feed |
+| :---: | :---: |
+| ![CST Single Patch 3D Model](docs/cst_single_patch_3d.png) | ![CST 1x4 Array 3D Model](docs/cst_1x4_array_3d.png) |
+
+### $2 \times 2$ Planar Array & Transmit/Receive Dual-Port Geometries
+
+| $2 \times 2$ Planar Beamforming Array | Tx/Rx Dual-Polarized / Multi-Port Array |
+| :---: | :---: |
+| ![CST 2x2 Array 3D Model](docs/cst_2x2_array_3d.png) | ![CST Tx/Rx Array 3D Model](docs/cst_txrx_array_3d.png) |
+
+---
+
 ## Project Structure
 
 ```text
