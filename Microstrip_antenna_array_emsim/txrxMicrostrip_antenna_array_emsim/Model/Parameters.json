@@ -1,0 +1,206 @@
+{
+    "parameters": [
+        {
+            "descr": "Ground Plane Width",
+            "expr": "126",
+            "name": "Wg",
+            "value": "126"
+        },
+        {
+            "descr": "Ground Plane Legnth",
+            "expr": "102.4",
+            "name": "Lg",
+            "value": "102.4"
+        },
+        {
+            "descr": "Patch Width",
+            "expr": "105",
+            "name": "W",
+            "value": "105"
+        },
+        {
+            "descr": "Patch Legnth",
+            "expr": "87",
+            "name": "L",
+            "value": "87"
+        },
+        {
+            "descr": "Board Thickness",
+            "expr": "1.6",
+            "name": "h",
+            "value": "1.6"
+        },
+        {
+            "descr": "Copper Thickness",
+            "expr": "0.035",
+            "name": "t",
+            "value": "0.035"
+        },
+        {
+            "descr": "Feed Width",
+            "expr": "3",
+            "name": "wf",
+            "value": "3"
+        },
+        {
+            "expr": "1",
+            "name": "g",
+            "value": "1"
+        },
+        {
+            "expr": "12",
+            "name": "y0",
+            "value": "12"
+        },
+        {
+            "descr": "Via Radius",
+            "expr": "0.4",
+            "name": "via_r",
+            "value": "0.4"
+        },
+        {
+            "descr": "Board Area",
+            "expr": "Wg*Lg",
+            "name": "A_Board",
+            "value": "12902.4"
+        },
+        {
+            "descr": "Patch Area",
+            "expr": "W*L",
+            "name": "A_Patch",
+            "value": "9135"
+        },
+        {
+            "descr": "Number of elements",
+            "expr": "4",
+            "name": "N",
+            "value": "4"
+        },
+        {
+            "descr": "Element spacing, mm",
+            "expr": "130",
+            "name": "d",
+            "value": "130"
+        },
+        {
+            "descr": "70.7 ohm line width",
+            "expr": "1.58",
+            "name": "w70",
+            "value": "1.58"
+        },
+        {
+            "descr": "70.7 ohm quarter-wave arm length",
+            "expr": "48.3",
+            "name": "l70",
+            "value": "48.3"
+        },
+        {
+            "descr": "Wilkinson isolation resistor, ohms",
+            "expr": "100",
+            "name": "Riso",
+            "value": "100"
+        },
+        {
+            "descr": "Extra board length reserved for the feed network, mm",
+            "expr": "110",
+            "name": "fnet_depth",
+            "value": "110"
+        },
+        {
+            "descr": "Element 1 center X",
+            "expr": "-1.5*d",
+            "name": "X1",
+            "value": "-195"
+        },
+        {
+            "descr": "Element 2 center X",
+            "expr": "-0.5*d",
+            "name": "X2",
+            "value": "-65"
+        },
+        {
+            "descr": "Element 3 center X",
+            "expr": "0.5*d",
+            "name": "X3",
+            "value": "65"
+        },
+        {
+            "descr": "Element 4 center X",
+            "expr": "1.5*d",
+            "name": "X4",
+            "value": "195"
+        },
+        {
+            "descr": "gap between the two arm outputs, for the isolation resistor pad",
+            "expr": "2",
+            "name": "res_gap",
+            "value": "2"
+        },
+        {
+            "descr": "horizontal offset of each arm from center",
+            "expr": "(res_gap + w70)/2",
+            "name": "Lx",
+            "value": "1.79"
+        },
+        {
+            "descr": "remaining vertical run per arm, so horizontal+vertical ˜ l70",
+            "expr": "l70-Lx",
+            "name": "Ly",
+            "value": "46.51"
+        },
+        {
+            "expr": "10",
+            "name": "stub_len",
+            "value": "10"
+        },
+        {
+            "descr": "Stage-1 split-point Y, 20 mm input stub",
+            "expr": "Lg/2 + fnet_depth - 10",
+            "name": "Y_s1",
+            "value": "151.2"
+        },
+        {
+            "descr": "Stage-2 split-point Y, = 99.5 mm",
+            "expr": "Lg/2 + l70",
+            "name": "Y_s2",
+            "value": "99.5"
+        },
+        {
+            "descr": "Stage-2 input-trace length upward",
+            "expr": "5",
+            "name": "stub_s2",
+            "value": "5"
+        },
+        {
+            "descr": "Stage-2 left center X = -d = -130",
+            "expr": "(X1+X2)/2",
+            "name": "X_s2L",
+            "value": "-130"
+        },
+        {
+            "descr": "Stage-2 right center X = +d = +130",
+            "expr": "(X3+X4)/2",
+            "name": "X_s2R",
+            "value": "130"
+        },
+        {
+            "descr": "Stage-1 arm-output Y",
+            "expr": "Y_s1 - Ly",
+            "name": "Y1num",
+            "value": "104.69"
+        },
+        {
+            "descr": "Stage-2 arm-output Y",
+            "expr": "Y_s2 - Ly",
+            "name": "Y2num",
+            "value": "52.99"
+        },
+        {
+            "descr": "Stage-1 input trace length",
+            "expr": "Lg/2 + fnet_depth - Y_s1",
+            "name": "Lin1",
+            "value": "10"
+        }
+    ],
+    "version": 1
+}

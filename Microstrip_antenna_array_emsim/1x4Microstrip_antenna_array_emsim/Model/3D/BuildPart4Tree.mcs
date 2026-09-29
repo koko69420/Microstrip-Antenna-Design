@@ -1,0 +1,193 @@
+' ============================================================
+' BuildPart4Tree — 4-element 868 MHz beamforming array
+' Part 4: Binary Wilkinson feed tree
+' CST Studio Suite 2024 — Structure Macro
+' ============================================================
+
+Option Explicit
+
+' ------------------------------------------------------------
+' Main
+' ------------------------------------------------------------
+Sub Main()
+
+    ' Stage 1 input-trace length is now a CST parameter: Lin1
+    ' (defined in the Parameter List as "Lg/2 + fnet_depth - Y_s1")
+
+    Call BuildDivider("Stage1",  "0",     "Y_s1", "Lin1")
+    Call BuildDivider("Stage2L", "X_s2L", "Y_s2", "stub_s2")
+    Call BuildDivider("Stage2R", "X_s2R", "Y_s2", "stub_s2")
+
+    Call BuildInterStageRoute("Inter_L", "-Lx", "X_s2L")
+    Call BuildInterStageRoute("Inter_R",  "Lx", "X_s2R")
+
+    Call BuildRouteToFeedLine("Route_L_FL1", "X_s2L-Lx", "X1")
+    Call BuildRouteToFeedLine("Route_L_FL2", "X_s2L+Lx", "X2")
+    Call BuildRouteToFeedLine("Route_R_FL3", "X_s2R-Lx", "X3")
+    Call BuildRouteToFeedLine("Route_R_FL4", "X_s2R+Lx", "X4")
+
+    Rebuild
+
+    ReportInformation "Part 4 feed tree built."
+
+    MsgBox "Part 4 complete. Check the Navigation Tree.", _
+           vbInformation, "Done"
+
+End Sub
+
+
+' ------------------------------------------------------------
+' BuildDivider
+' ------------------------------------------------------------
+Sub BuildDivider(ByVal tag As String, _
+                 ByVal Xc As String, _
+                 ByVal Yc As String, _
+                 ByVal Lin As String)
+
+    ' Input trace
+    Call MakeBrick(tag & "_InputTrace", _
+        "(" & Xc & "-wf/2)", "(" & Xc & "+wf/2)", _
+        Yc,                  "(" & Yc & "+" & Lin & ")", _
+        "h", "h+t")
+
+    ' Right arm — horizontal
+    Call MakeBrick(tag & "_ArmR_H", _
+        Xc,                  "(" & Xc & "+Lx)", _
+        "(" & Yc & "-w70/2)", "(" & Yc & "+w70/2)", _
+        "h", "h+t")
+
+    ' Right arm — vertical
+    Call MakeBrick(tag & "_ArmR_V", _
+        "(" & Xc & "+Lx-w70/2)", "(" & Xc & "+Lx+w70/2)", _
+        "(" & Yc & "-Ly)",       "(" & Yc & "+w70/2)", _
+        "h", "h+t")
+
+    ' Left arm — horizontal
+    Call MakeBrick(tag & "_ArmL_H", _
+        "(" & Xc & "-Lx)",    Xc, _
+        "(" & Yc & "-w70/2)", "(" & Yc & "+w70/2)", _
+        "h", "h+t")
+
+    ' Left arm — vertical
+    Call MakeBrick(tag & "_ArmL_V", _
+        "(" & Xc & "-Lx-w70/2)", "(" & Xc & "-Lx+w70/2)", _
+        "(" & Yc & "-Ly)",       "(" & Yc & "+w70/2)", _
+        "h", "h+t")
+
+    ' Boolean-add the right arm segments
+    Call BooleanAdd("component1:" & tag & "_ArmR_H", _
+                    "component1:" & tag & "_ArmR_V")
+
+    ' Boolean-add the left arm segments
+    Call BooleanAdd("component1:" & tag & "_ArmL_H", _
+                    "component1:" & tag & "_ArmL_V")
+
+    ' Isolation resistor
+    Call CreateResistor(tag & "_Riso", _
+        "(" & Xc & "-res_gap/2)", "(" & Yc & "-Ly)", _
+        "(" & Xc & "+res_gap/2)", "(" & Yc & "-Ly)")
+
+End Sub
+
+
+' ------------------------------------------------------------
+' BuildInterStageRoute
+' ------------------------------------------------------------
+Sub BuildInterStageRoute(ByVal tag As String, _
+                         ByVal X_start As String, _
+                         ByVal X_end As String)
+
+    Call MakeBrick(tag & "_H", _
+        "(" & X_start & ")", "(" & X_end & ")", _
+        "Y_out1-wf/2",       "Y_out1+wf/2", _
+        "h", "h+t")
+
+    Call MakeBrick(tag & "_V", _
+        "(" & X_end & "-wf/2)", "(" & X_end & "+wf/2)", _
+        "Y_out1",               "Y_s2+stub_s2", _
+        "h", "h+t")
+
+    Call BooleanAdd("component1:" & tag & "_H", _
+                    "component1:" & tag & "_V")
+
+End Sub
+
+
+' ------------------------------------------------------------
+' BuildRouteToFeedLine
+' ------------------------------------------------------------
+Sub BuildRouteToFeedLine(ByVal tag As String, _
+                         ByVal X_arm As String, _
+                         ByVal X_feed As String)
+
+    Call MakeBrick(tag & "_H", _
+        "(" & X_arm & ")",  "(" & X_feed & ")", _
+        "Y_out2-wf/2",      "Y_out2+wf/2", _
+        "h", "h+t")
+
+    Call MakeBrick(tag & "_V", _
+        "(" & X_feed & "-wf/2)", "(" & X_feed & "+wf/2)", _
+        "Y_out2",                "Lg/2", _
+        "h", "h+t")
+
+    Call BooleanAdd("component1:" & tag & "_H", _
+                    "component1:" & tag & "_V")
+
+End Sub
+
+
+' ------------------------------------------------------------
+' MakeBrick — auto-orders ranges with min()/max()
+' ------------------------------------------------------------
+Sub MakeBrick(ByVal objName As String, _
+              ByVal x1 As String, ByVal x2 As String, _
+              ByVal y1 As String, ByVal y2 As String, _
+              ByVal z1 As String, ByVal z2 As String)
+
+    With Brick
+        .Reset
+        .Name objName
+        .Component "component1"
+        .Material "Copper (annealed)"
+        .Xrange "min(" & x1 & "," & x2 & ")", "max(" & x1 & "," & x2 & ")"
+        .Yrange "min(" & y1 & "," & y2 & ")", "max(" & y1 & "," & y2 & ")"
+        .Zrange "min(" & z1 & "," & z2 & ")", "max(" & z1 & "," & z2 & ")"
+        .Create
+    End With
+
+End Sub
+
+
+' ------------------------------------------------------------
+' CreateResistor
+' ------------------------------------------------------------
+Sub CreateResistor(ByVal objName As String, _
+                   ByVal x1 As String, ByVal y1 As String, _
+                   ByVal x2 As String, ByVal y2 As String)
+
+    With LumpedElement
+        .Reset
+        .SetName objName
+        .SetType "RLCSerial"
+        .SetR "Riso"
+        .SetL "0"
+        .SetC "0"
+        .SetGs "0"
+        .SetI0 "1e-14"
+        .SetT "300"
+        .SetP1 "False", x1, y1, "h"
+        .SetP2 "False", x2, y2, "h"
+        .SetInvert "False"
+        .SetMonitor "True"
+        .Create
+    End With
+
+End Sub
+
+
+' ------------------------------------------------------------
+' BooleanAdd
+' ------------------------------------------------------------
+Sub BooleanAdd(ByVal object1 As String, ByVal object2 As String)
+    Solid.Add object1, object2
+End Sub

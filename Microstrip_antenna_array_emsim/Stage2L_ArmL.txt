@@ -1,0 +1,6 @@
+X_s2L Y_s2+w70/2
+X_s2L-Lx-w70/2 Y_s2+w70/2
+X_s2L-Lx-w70/2 Y_s2-Ly
+X_s2L-Lx+w70/2 Y_s2-Ly
+X_s2L-Lx+w70/2 Y_s2-w70/2
+X_s2L Y_s2-w70/2

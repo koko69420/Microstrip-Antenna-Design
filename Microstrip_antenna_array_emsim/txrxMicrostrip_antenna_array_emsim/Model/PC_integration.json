@@ -1,0 +1,104 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "Wg",
+         "type": "float",
+         "value": 126.0
+      },
+      {
+         "name": "Lg",
+         "type": "float",
+         "value": 102.4
+      },
+      {
+         "name": "W",
+         "type": "float",
+         "value": 105.0
+      },
+      {
+         "name": "L",
+         "type": "float",
+         "value": 87.0
+      },
+      {
+         "name": "h",
+         "type": "float",
+         "value": 1.6
+      },
+      {
+         "name": "t",
+         "type": "float",
+         "value": 0.035
+      },
+      {
+         "name": "wf",
+         "type": "float",
+         "value": 3.0
+      },
+      {
+         "name": "g",
+         "type": "float",
+         "value": 1.0
+      },
+      {
+         "name": "y0",
+         "type": "float",
+         "value": 12.0
+      },
+      {
+         "name": "via_r",
+         "type": "float",
+         "value": 0.4
+      },
+      {
+         "name": "N",
+         "type": "float",
+         "value": 4.0
+      },
+      {
+         "name": "d",
+         "type": "float",
+         "value": 130.0
+      },
+      {
+         "name": "w70",
+         "type": "float",
+         "value": 1.58
+      },
+      {
+         "name": "l70",
+         "type": "float",
+         "value": 48.3
+      },
+      {
+         "name": "Riso",
+         "type": "float",
+         "value": 100.0
+      },
+      {
+         "name": "fnet_depth",
+         "type": "float",
+         "value": 110.0
+      },
+      {
+         "name": "res_gap",
+         "type": "float",
+         "value": 2.0
+      },
+      {
+         "name": "stub_len",
+         "type": "float",
+         "value": 10.0
+      },
+      {
+         "name": "stub_s2",
+         "type": "float",
+         "value": 5.0
+      }
+   ],
+   "outputVariables": []
+}

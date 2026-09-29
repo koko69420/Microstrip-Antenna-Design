@@ -1,0 +1,89 @@
+{
+   "execution": {
+      "classname": "SMAPowerByEmagHPCFrame",
+      "libname": "SMAPowerByEmagUI"
+   },
+   "inputVariables": [
+      {
+         "name": "fc",
+         "type": "float",
+         "value": 868.0
+      },
+      {
+         "name": "eps_r",
+         "type": "float",
+         "value": 4.45
+      },
+      {
+         "name": "h_sub",
+         "type": "float",
+         "value": 1.6
+      },
+      {
+         "name": "t_cu",
+         "type": "float",
+         "value": 0.035
+      },
+      {
+         "name": "W_p",
+         "type": "float",
+         "value": 104.7
+      },
+      {
+         "name": "L_p",
+         "type": "float",
+         "value": 82.0
+      },
+      {
+         "name": "dx",
+         "type": "float",
+         "value": 180.0
+      },
+      {
+         "name": "dy",
+         "type": "float",
+         "value": 180.0
+      },
+      {
+         "name": "W_50",
+         "type": "float",
+         "value": 3.06
+      },
+      {
+         "name": "W_70",
+         "type": "float",
+         "value": 1.62
+      },
+      {
+         "name": "L_qtr",
+         "type": "float",
+         "value": 47.0
+      },
+      {
+         "name": "L_del",
+         "type": "float",
+         "value": 47.25
+      },
+      {
+         "name": "y_inset",
+         "type": "float",
+         "value": 24.0
+      },
+      {
+         "name": "w_notch",
+         "type": "float",
+         "value": 6.0
+      },
+      {
+         "name": "W_sub",
+         "type": "float",
+         "value": 440.0
+      },
+      {
+         "name": "L_sub",
+         "type": "float",
+         "value": 480.0
+      }
+   ],
+   "outputVariables": []
+}

@@ -1,0 +1,74 @@
+{
+    "parameters": [
+        {
+            "descr": "Ground Plane Width",
+            "expr": "126",
+            "name": "Wg",
+            "value": "126"
+        },
+        {
+            "descr": "Ground Plane Legnth",
+            "expr": "102.4",
+            "name": "Lg",
+            "value": "102.4"
+        },
+        {
+            "descr": "Patch Width",
+            "expr": "105",
+            "name": "W",
+            "value": "105"
+        },
+        {
+            "descr": "Patch Legnth",
+            "expr": "87",
+            "name": "L",
+            "value": "87"
+        },
+        {
+            "descr": "Board Thickness",
+            "expr": "1.6",
+            "name": "h",
+            "value": "1.6"
+        },
+        {
+            "descr": "Copper Thickness",
+            "expr": "0.035",
+            "name": "t",
+            "value": "0.035"
+        },
+        {
+            "expr": "3",
+            "name": "wf",
+            "value": "3"
+        },
+        {
+            "expr": "1",
+            "name": "g",
+            "value": "1"
+        },
+        {
+            "expr": "12",
+            "name": "y0",
+            "value": "12"
+        },
+        {
+            "descr": "Via Radius",
+            "expr": "0.4",
+            "name": "via_r",
+            "value": "0.4"
+        },
+        {
+            "descr": "Board Area",
+            "expr": "Wg*Lg",
+            "name": "A_Board",
+            "value": "12902.4"
+        },
+        {
+            "descr": "Patch Area",
+            "expr": "W*L",
+            "name": "A_Patch",
+            "value": "9135"
+        }
+    ],
+    "version": 1
+}

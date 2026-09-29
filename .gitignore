@@ -1,0 +1,12 @@
+# CST temporary and cache folders
+ModelCache/
+Temp/
+Result/
+*.bak-cst
+*.tmp
+
+# OS & Editor files
+*~
+*.swp
+*.bak
+.DS_Store

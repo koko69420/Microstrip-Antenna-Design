@@ -1,0 +1,13 @@
+{
+   "Author": "kaust",
+   "Comment": "",
+   "Last Problem Type": "High Frequency",
+   "Last Solver Type": "HF Time Domain",
+   "Last Solver Type Abb": "t",
+   "Mesh Cells": "169,658,300",
+   "Mesh Type": "Hexahedral",
+   "Modeler Unique ID": "5:txrxmicrostrip_antenna_array_emsim.cst?d6ac9721fcc8614cda57879ac0be5a06?55416:numberofparameters=29:port=1>mode=1>zre=0>zim=0?port=2>mode=1>zre=0>zim=0:::l?lg?lx?ly?n?riso?w?x1?x2?x3?x4?x_s2l?x_s2r?y1num?y2num?y_s1?y_s2?d?fnet_depth?g?h?l70?res_gap?stub_len?stub_s2?via_r?w70?wf?y0",
+   "ProjectVersion": "'# MWS Version: Version 2024.1 - Oct 16 2023 - ACIS 33.0.1 -",
+   "Results": "Time Domain: S-Parameter",
+   "Version": "3"
+}

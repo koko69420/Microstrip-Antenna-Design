@@ -1,0 +1,53 @@
+{
+    "parameter sweep": {
+        "options": {
+            "restore parameter values after run": "false",
+            "simulation type": "Transient",
+            "skip existing combinations": "true",
+            "start active solver": "true"
+        },
+        "sequences": {
+            "Sequence 1": [
+                {
+                    "type": "arbitrary",
+                    "values": "84;87;90",
+                    "varname": "L"
+                },
+                {
+                    "type": "arbitrary",
+                    "values": "105",
+                    "varname": "W"
+                },
+                {
+                    "type": "arbitrary",
+                    "values": "105;115.5;126",
+                    "varname": "Wg"
+                },
+                {
+                    "index": 1
+                }
+            ],
+            "Sequence 2": [
+                {
+                    "type": "arbitrary",
+                    "values": "84;87;90",
+                    "varname": "L"
+                },
+                {
+                    "type": "arbitrary",
+                    "values": "120",
+                    "varname": "W"
+                },
+                {
+                    "type": "arbitrary",
+                    "values": "120;132;144",
+                    "varname": "Wg"
+                },
+                {
+                    "index": 2
+                }
+            ]
+        },
+        "version": 1
+    }
+}

@@ -1,0 +1,40 @@
+11
+0
+0
+3
+Gain (IEEE) at const phi=0 for 5x5 array (array factor)
+Farfield Result
+1
+M1D
+Farfield and Antenna Properties
+P
+EP10
+Farfield Result^+MWS+DS.rtp
+VBA
+3
+Gain (IEEE) at const phi=0 for 5x5 array (array factor)\f=800
+Gain (IEEE) at const phi=0 for 5x5 array (array factor)\f=868
+Gain (IEEE) at const phi=0 for 5x5 array (array factor)\f=900
+Total Scan Pattern
+Total Scan Pattern
+1
+1D
+Farfield and Antenna Properties
+P
+ED10
+Total Scan Pattern^+MWS+DS.rtp
+VBA
+1
+Total Scan Pattern
+Combine Results
+- Combine Results
+1
+1D
+2D and 3D Field Results
+P
+ED10
+- Combine Results^+MWS.rtp
+VBA
+0
+1
+1:FFEnvelope_Result

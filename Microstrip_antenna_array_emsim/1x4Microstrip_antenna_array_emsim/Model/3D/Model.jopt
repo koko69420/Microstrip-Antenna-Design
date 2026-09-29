@@ -1,0 +1,240 @@
+{
+    "Optimizer": {
+        "Goals": [
+            {
+                "Complex Type": "MagdB",
+                "Goal Name": "Result 1DC",
+                "Goal Norm": "MaxDiff",
+                "Goal active": "True",
+                "Operator": "<",
+                "Range Type": "Total",
+                "Result List": [
+                    {
+                        "Data Source": "Solver",
+                        "Treepath": "1D Results\\S-Parameters\\S1,1",
+                        "Type": "1D Complex"
+                    }
+                ],
+                "Target": "-25",
+                "Target Max": "0.0",
+                "Use Slope": "False",
+                "Weight": "1.0"
+            }
+        ],
+        "Parameters": {
+            "Parameter List": [
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "130",
+                    "Max Value": "143",
+                    "Min Value": "117",
+                    "Parameter Name": "d"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "110",
+                    "Max Value": "121",
+                    "Min Value": "99",
+                    "Parameter Name": "fnet_depth"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "1",
+                    "Max Value": "1.1",
+                    "Min Value": "0.9",
+                    "Parameter Name": "g"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "1.6",
+                    "Max Value": "1.76",
+                    "Min Value": "1.44",
+                    "Parameter Name": "h"
+                },
+                {
+                    "Active": "True",
+                    "Anchors": "5",
+                    "Initial Value": "87",
+                    "Max Value": "97",
+                    "Min Value": "77",
+                    "Parameter Name": "L"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "48.3",
+                    "Max Value": "53.13",
+                    "Min Value": "43.47",
+                    "Parameter Name": "l70"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "102.4",
+                    "Max Value": "112.64",
+                    "Min Value": "92.16",
+                    "Parameter Name": "Lg"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "4",
+                    "Max Value": "4.4",
+                    "Min Value": "3.6",
+                    "Parameter Name": "N"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "2",
+                    "Max Value": "2.2",
+                    "Min Value": "1.8",
+                    "Parameter Name": "res_gap"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "100",
+                    "Max Value": "110",
+                    "Min Value": "90",
+                    "Parameter Name": "Riso"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "10",
+                    "Max Value": "11",
+                    "Min Value": "9",
+                    "Parameter Name": "stub_len"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "5",
+                    "Max Value": "5.5",
+                    "Min Value": "4.5",
+                    "Parameter Name": "stub_s2"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "0.035",
+                    "Max Value": "0.0385",
+                    "Min Value": "0.0315",
+                    "Parameter Name": "t"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "0.4",
+                    "Max Value": "0.44",
+                    "Min Value": "0.36",
+                    "Parameter Name": "via_r"
+                },
+                {
+                    "Active": "True",
+                    "Anchors": "5",
+                    "Initial Value": "105",
+                    "Max Value": "115",
+                    "Min Value": "95",
+                    "Parameter Name": "W"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "1.58",
+                    "Max Value": "1.738",
+                    "Min Value": "1.422",
+                    "Parameter Name": "w70"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "3",
+                    "Max Value": "3.3",
+                    "Min Value": "2.7",
+                    "Parameter Name": "wf"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "126",
+                    "Max Value": "138.6",
+                    "Min Value": "113.4",
+                    "Parameter Name": "Wg"
+                },
+                {
+                    "Active": "False",
+                    "Anchors": "5",
+                    "Initial Value": "12",
+                    "Max Value": "13.2",
+                    "Min Value": "10.8",
+                    "Parameter Name": "y0"
+                }
+            ],
+            "Range Percentage": "10",
+            "Start From Current": "True"
+        },
+        "Settings": {
+            "CMAES Settings": {
+                "Maximal Iterations": 3000,
+                "Seed": 1,
+                "Sigma": "0.2",
+                "Use External Anchor": "True",
+                "Use Maximal Iterations": "True"
+            },
+            "Classic Powell Settings": {
+                "Accuracy": "0.01"
+            },
+            "General Settings": {
+                "Algorithm Type": "Trust Region Framework",
+                "Data Storage Type": "None",
+                "Goal Summary Type": "Sum of all goals",
+                "Move Mesh": "False",
+                "Start Active Solver": "True",
+                "Use Data Of Prev Calculations": "False"
+            },
+            "Genetic Algorithm Settings": {
+                "Generation Size": 32,
+                "Goal Function Level": "0.0",
+                "Initial Distribution": "Latin Hypercube Distribution",
+                "Interpolation": "No Interpolation",
+                "Maximal Iterations": 30,
+                "Mutation Rate": 60,
+                "Seed": 1
+            },
+            "Nelder Mead Simplex Settings": {
+                "Goal Function Level": "0.0",
+                "Initial Distribution": "Noisy Latin Hypercube Distribution",
+                "Maximal Iterations": 250,
+                "Min Simplex Size": "1e-6",
+                "Seed": 1,
+                "Use External Anchor": "True",
+                "Use Maximal Iterations": "False"
+            },
+            "Particle Swarm Settings": {
+                "Generation Size": 30,
+                "Goal Function Level": "0.0",
+                "Initial Distribution": "Latin Hypercube Distribution",
+                "Interpolation": "No Interpolation",
+                "Maximal Iterations": 15,
+                "Seed": 1
+            },
+            "Quasi Newton Settings": {
+                "Refinements": "1"
+            },
+            "Trust Region Settings": {
+                "Domain Accuracy": "0.01",
+                "Finite Differences Delta": "Automatic",
+                "Maximal Iterations": 500,
+                "Sigma": "0.2",
+                "Use Maximal Iterations": "False"
+            }
+        },
+        "Version": 1
+    }
+}

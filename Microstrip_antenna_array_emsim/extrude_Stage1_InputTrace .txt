@@ -1,0 +1,4 @@
+(-wf/2, Y_s1)
+( wf/2, Y_s1)
+( wf/2, Lg/2+fnet_depth)
+(-wf/2, Lg/2+fnet_depth)
